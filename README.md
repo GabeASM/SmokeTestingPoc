@@ -32,7 +32,7 @@ Estas pruebas de alto nivel tiene como propósito comprobar el funcionamiento de
 
 2. **Realizar el flujo de prueba manual**:
     - **Paso 1**: Abre la aplicación y navega a la pantalla de inicio de sesión.
-    - **Paso 2**: Introduce un nombre de usuario válido y una contraseña válida (por ejemplo, `psoftware@ufronteracl` y `hola123`).
+    - **Paso 2**: Introduce un nombre de usuario válido y una contraseña válida (por ejemplo, `psoftware@ufrontera.cl` y `hola123`).
     - **Paso 3**: Presiona el botón "Iniciar sesión".
     - **Paso 4**: Verifica si la aplicación te redirige correctamente a la pantalla principal (deberías ver el texto "Smoking Test").
 
@@ -53,7 +53,7 @@ Estas pruebas de alto nivel tiene como propósito comprobar el funcionamiento de
 
 1. **Configurar el entorno de pruebas**:
     - Instala Flutter y las dependencias necesarias.
-    - Asegúrate de que el archivo de prueba (`test/widget_test.dart` o un archivo similar) esté configurado con el código adecuado (como el ejemplo que has proporcionado).
+    - Asegúrate de que el archivo de prueba (`test/widget_test.dart` o un archivo similar) esté configurado con el código adecuado.
 
 2. **Escribir el código de prueba**:
     - Usa el código del ejemplo para automatizar el inicio de sesión y la verificación de las pantallas principales y los mensajes de error.
