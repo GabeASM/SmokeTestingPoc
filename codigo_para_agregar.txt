@@ -1,0 +1,58 @@
+************** CODIGO 1 ***********************
+cambiar el codigo del archivo home_screen.dart
+
+import 'package:flutter/material.dart';
+import 'package:smoke_poc/login/screens/login_screen.dart';
+
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Smoking Test'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.logout),
+            onPressed: () {
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(builder: (ctx) => const LoginScreen()),
+              );
+            },
+          )
+        ],
+      ),
+      body: const Center(
+        child: Text('Bienvenido a la pantalla principal'),
+      ),
+    );
+  }
+}
+
+******* agregar esta prueba de humo en el archivo widget_test.dart ******* 
+
+testWidgets('Prueba de humo: inicio y cierre de sesión', (WidgetTester tester) async {
+  // Cargar la app
+  await tester.pumpWidget(const MyApp());
+
+  // Introducir credenciales válidas
+  await tester.enterText(find.byKey(const Key('username')), 'usuario_test');
+  await tester.enterText(find.byKey(const Key('password')), 'contraseña_test');
+
+  // Iniciar sesión
+  await tester.tap(find.text('Iniciar sesión'));
+  await tester.pumpAndSettle();
+
+  // Verificar que la pantalla principal se muestra
+  expect(find.text('Smoking Test'), findsOneWidget);
+
+  // Presionar el botón de cerrar sesión
+  await tester.tap(find.byIcon(Icons.logout));
+  await tester.pumpAndSettle();
+
+  // Verificar que el usuario ha vuelto a la pantalla de inicio de sesión
+  expect(find.text('Iniciar sesión'), findsOneWidget);
+});
+
+*******************************************************************************************************************
